@@ -14,36 +14,36 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         	v.cpus = 1
     	end
 	end
-	config.vm.define "webserver1" do |app|
+	config.vm.define "ftp1" do |app|
     	app.vm.box = "bento/ubuntu-16.04"
-    	app.vm.hostname = "webserver1"
+    	app.vm.hostname = "ftp1"
     	app.vm.network "private_network", ip: "192.168.33.12"
 		app.vm.provider "virtualbox" do |v|
         	v.memory = 1024
         	v.cpus = 1
         end
     end
-    config.vm.define "webserver2" do |app|
+    config.vm.define "ftp2" do |app|
         app.vm.box = "bento/ubuntu-16.04"
-        app.vm.hostname = "webserver2"
+        app.vm.hostname = "ftp2"
         app.vm.network "private_network", ip: "192.168.33.13"
         app.vm.provider "virtualbox" do |v|
             v.memory = 1024
             v.cpus = 1
         end
     end
-    config.vm.define "dbserver" do |app|
+    config.vm.define "gluster1" do |app|
         app.vm.box = "bento/ubuntu-16.04"
-        app.vm.hostname = "dbserver"
+        app.vm.hostname = "gluster1"
         app.vm.network "private_network", ip: "192.168.33.14"
         app.vm.provider "virtualbox" do |v|
             v.memory = 1024
             v.cpus = 1
         end
     end
-    config.vm.define "dbserver2" do |app|
+    config.vm.define "gluster2" do |app|
         app.vm.box = "bento/ubuntu-16.04"
-        app.vm.hostname = "dbserver2"
+        app.vm.hostname = "gluster2"
         app.vm.network "private_network", ip: "192.168.33.15"
         app.vm.provider "virtualbox" do |v|
             v.memory = 1024
